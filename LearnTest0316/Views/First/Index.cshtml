@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>This is First made index</h2>
+<table class="table">
+    <tr>
+        <td>@ViewBag.Name_001</td>
+        <td>@ViewData["Address_001"]</td>
+    </tr>
+    <tr>
+        <td>@ViewBag.Name_002</td>
+        <td>@ViewData["Address_002"]</td>
+    </tr>
+</table>
+<a href="/First/About?Id=12345">透過路由方法丟值到後台</a>
+<h3>數據為:@ViewBag.Data</h3>
