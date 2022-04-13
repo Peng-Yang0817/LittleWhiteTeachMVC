@@ -15,13 +15,20 @@ namespace LearnTest0316.Controllers
             ViewBag.Name_001 = "孫鵬鵬";
             ViewBag.Name_002 = "林霏霏";
             ViewBag.Data = Newtonsoft.Json.JsonConvert.SerializeObject(MVCAchPOC_DB_BLL.getList());
+            List<Users> UsersData = MVCAchPOC_DB_BLL.getList();
             ViewData["Address_001"] = "臺灣_新北";
             ViewData["Address_002"] = "韓國_首爾";
-            return View();
+            return View(UsersData);
         }
         public ActionResult About(int Id) {
             ViewBag.User_Id_001 = Id;
             return View();
+        }
+        public ActionResult GetUserData()
+        {
+            //第一個物件
+            List<Users> UserData = MVCAchPOC_DB_BLL.getList();
+            return Json(UserData, "text/json", JsonRequestBehavior.AllowGet);
         }
     }
 }
