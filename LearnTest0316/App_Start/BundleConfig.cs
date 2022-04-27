@@ -25,6 +25,11 @@ namespace LearnTest0316
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            bundles.Add(new ScriptBundle("~/bundles/DataTables").Include(
+                       "~/Scripts/jquery.dataTables.min.js"));
+            bundles.Add(new StyleBundle("~/DataTables/css").Include(
+                      "~/Content/jquery.dataTables.min.css"));
         }
     }
 }

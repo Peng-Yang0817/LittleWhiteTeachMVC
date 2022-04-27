@@ -79,7 +79,6 @@ D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\bin\zh-Hant\Syst
 D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\bin\zh-Hant\System.Web.WebPages.resources.dll
 D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
 D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
-D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\obj\Debug\LearnTest0316.csproj.AssemblyReference.cache
 D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\obj\Debug\LearnTest0316.csproj.CoreCompileInputs.cache
 D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\obj\Debug\LearnTest0316.dll
 D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\obj\Debug\LearnTest0316.pdb

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using LearnTest0316.DAL;
 using LearnTest0316.BLL;
+using System.IO;
 
 namespace LearnTest0316.Controllers
 {
@@ -14,11 +15,11 @@ namespace LearnTest0316.Controllers
         {
             ViewBag.Name_001 = "孫鵬鵬";
             ViewBag.Name_002 = "林霏霏";
-            ViewBag.Data = Newtonsoft.Json.JsonConvert.SerializeObject(MVCAchPOC_DB_BLL.getList());
             List<Users> UsersData = MVCAchPOC_DB_BLL.getList();
             ViewData["Address_001"] = "臺灣_新北";
             ViewData["Address_002"] = "韓國_首爾";
-            return View(UsersData);
+            ViewBag.UserList = UsersData;
+            return View();
         }
         public ActionResult About(int Id) {
             ViewBag.User_Id_001 = Id;
@@ -30,5 +31,14 @@ namespace LearnTest0316.Controllers
             List<Users> UserData = MVCAchPOC_DB_BLL.getList();
             return Json(UserData, "text/json", JsonRequestBehavior.AllowGet);
         }
+        public ActionResult GetJQFile()
+        {
+            string filepath = Server.MapPath("~/Scripts/jquery-3.4.1.js");
+            string filename = System.IO.Path.GetFileName(filepath);
+            //讀成串流
+            Stream iStream = new FileStream(filepath, FileMode.Open, FileAccess.Read, FileShare.Read);
+            return File(iStream, "application/js", filename);
+        }
+
     }
 }
