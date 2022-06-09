@@ -1,0 +1,28 @@
+﻿INFO 5 LearnTest0316.Utility.Logger - 系統初始化Logger模塊
+INFO 5 LearnTest0316.Controllers.FirstController - FirstController-TownView-Info
+WARN 5 LearnTest0316.Controllers.FirstController - FirstController-TownView-Warn
+ERROR 5 LearnTest0316.Controllers.FirstController - FirstController-TownView-Error
+DEBUG 5 LearnTest0316.Controllers.FirstController - FirstController-TownView-Debug
+INFO 6 LearnTest0316.Utility.Logger - 系統初始化Logger模塊
+INFO 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Info
+WARN 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Warn
+ERROR 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Error
+INFO 6 LearnTest0316.Utility.Logger - 系統初始化Logger模塊
+INFO 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Info
+WARN 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Warn
+ERROR 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Error
+INFO 6 LearnTest0316.Utility.Logger - 系統初始化Logger模塊
+INFO 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Info
+WARN 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Warn
+ERROR 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Error
+INFO 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Info
+WARN 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Warn
+ERROR 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Error
+INFO 6 LearnTest0316.Utility.Logger - 系統初始化Logger模塊
+INFO 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Info2022/6/9 下午 09:30:25
+WARN 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Warn2022/6/9 下午 09:30:25
+ERROR 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Error2022/6/9 下午 09:30:25
+INFO 6 LearnTest0316.Utility.Logger - 系統初始化Logger模塊
+INFO 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Info __ 2022/6/9 下午 09:31:37
+WARN 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Warn __ 2022/6/9 下午 09:31:37
+ERROR 6 LearnTest0316.Controllers.FirstController - FirstController-TownView-Error __ 2022/6/9 下午 09:31:37

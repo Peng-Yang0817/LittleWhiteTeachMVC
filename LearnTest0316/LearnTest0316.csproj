@@ -53,6 +53,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -133,34 +136,15 @@
     <Compile Include="BLL\MVCAchPOC_DB_BLL.cs" />
     <Compile Include="Controllers\FirstController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\C__MigrationHistory.cs">
-      <DependentUpon>MVCAchPOC_DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\MVCAchPOC_DB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MVCAchPOC_DB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\MVCAchPOC_DB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MVCAchPOC_DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\MVCAchPOC_DB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MVCAchPOC_DB.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Roles.cs">
-      <DependentUpon>MVCAchPOC_DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Users.cs">
-      <DependentUpon>MVCAchPOC_DB.tt</DependentUpon>
-    </Compile>
+    <Compile Include="DAL\C__MigrationHistory.cs" />
+    <Compile Include="DAL\MVCAchPOC_DB_DAL.cs" />
+    <Compile Include="DAL\Roles.cs" />
+    <Compile Include="DAL\Users.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -168,28 +152,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.dataTables.min.css" />
-    <Content Include="DAL\MVCAchPOC_DB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MVCAchPOC_DB.Context.cs</LastGenOutput>
-      <DependentUpon>MVCAchPOC_DB.edmx</DependentUpon>
-    </Content>
-    <Content Include="DAL\MVCAchPOC_DB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MVCAchPOC_DB.edmx</DependentUpon>
-      <LastGenOutput>MVCAchPOC_DB.cs</LastGenOutput>
-    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="DAL\MVCAchPOC_DB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MVCAchPOC_DB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DAL\MVCAchPOC_DB.edmx.diagram">
-      <DependentUpon>MVCAchPOC_DB.edmx</DependentUpon>
+    <Content Include="CfgFiles\log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -220,6 +190,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\First\Index.cshtml" />
     <Content Include="Views\First\About.cshtml" />
+    <Content Include="Views\First\TownView.cshtml" />
+    <Content Include="Views\Home\ErrorPage.cshtml" />
+    <Content Include="Views\Home\OpssPage.cshtml" />
+    <Content Include="Views\Home\ErrorCodingPag.cshtml" />
+    <Content Include="Views\Home\ErrorCodingPagReD.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

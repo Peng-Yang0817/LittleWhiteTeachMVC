@@ -26,5 +26,23 @@ namespace LearnTest0316.Controllers
 
             return View();
         }
+
+        public ActionResult ErrorPage()
+        {
+            return View();
+        }
+
+        public ActionResult OpssPage()
+        {
+            return View();
+        }
+
+        public ActionResult ErrorCodingPag() {
+            return View();
+        }
+        public ActionResult ErrorCodingPagReD()
+        {
+            return View();
+        }
     }
 }

@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\Temp發布</_PublishTargetUrl>
-    <History>True|2022-04-14T16:58:32.9520655Z;True|2022-04-15T00:58:13.5621127+08:00;True|2022-04-15T00:24:51.0898902+08:00;True|2022-04-14T23:43:39.5488512+08:00;True|2022-04-12T21:39:46.1061660+08:00;True|2022-04-12T21:36:36.3071349+08:00;True|2022-04-12T21:35:22.4877963+08:00;</History>
+    <History>True|2022-04-27T12:40:41.0059600Z;True|2022-04-15T00:58:32.9520655+08:00;True|2022-04-15T00:58:13.5621127+08:00;True|2022-04-15T00:24:51.0898902+08:00;True|2022-04-14T23:43:39.5488512+08:00;True|2022-04-12T21:39:46.1061660+08:00;True|2022-04-12T21:36:36.3071349+08:00;True|2022-04-12T21:35:22.4877963+08:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
@@ -21,10 +21,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/23/2017 13:15:20</publishTime>
     </File>
     <File Include="bin/LearnTest0316.dll">
-      <publishTime>04/15/2022 01:10:11</publishTime>
+      <publishTime>04/27/2022 20:40:39</publishTime>
     </File>
     <File Include="bin/LearnTest0316.pdb">
-      <publishTime>04/15/2022 01:10:11</publishTime>
+      <publishTime>04/27/2022 20:40:39</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>09/05/2018 16:10:50</publishTime>
@@ -257,6 +257,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Content/bootstrap.min.css.map">
       <publishTime>03/16/2022 23:00:41</publishTime>
     </File>
+    <File Include="Content/jquery.dataTables.min.css">
+      <publishTime>04/27/2022 19:09:42</publishTime>
+    </File>
     <File Include="Content/Site.css">
       <publishTime>03/16/2022 23:00:29</publishTime>
     </File>
@@ -308,6 +311,12 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Scripts/jquery-3.4.1.slim.min.map">
       <publishTime>03/16/2022 23:00:42</publishTime>
     </File>
+    <File Include="Scripts/jquery.dataTables.js">
+      <publishTime>04/27/2022 19:00:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery.dataTables.min.js">
+      <publishTime>04/27/2022 19:00:37</publishTime>
+    </File>
     <File Include="Scripts/jquery.validate.js">
       <publishTime>03/16/2022 23:00:46</publishTime>
     </File>
@@ -327,7 +336,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/20/2022 15:21:39</publishTime>
     </File>
     <File Include="Views/First/Index.cshtml">
-      <publishTime>04/15/2022 01:10:06</publishTime>
+      <publishTime>04/27/2022 20:46:29</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>03/16/2022 23:00:29</publishTime>
@@ -342,7 +351,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/16/2022 23:00:29</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/16/2022 23:00:29</publishTime>
+      <publishTime>04/27/2022 19:15:51</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>04/15/2022 00:56:43</publishTime>
@@ -351,7 +360,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/16/2022 23:00:29</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/15/2022 00:58:13</publishTime>
+      <publishTime>04/27/2022 20:40:40</publishTime>
     </File>
   </ItemGroup>
 </Project>

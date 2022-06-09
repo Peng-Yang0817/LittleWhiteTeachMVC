@@ -88,3 +88,7 @@ D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\bin\EntityFramew
 D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\bin\EntityFramework.SqlServer.xml
 D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\bin\zh-Hant\EntityFramework.resources.dll
 D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\bin\CfgFiles\log4net.config
+D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\bin\log4net.dll
+D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\bin\log4net.xml
+D:\Codding\小白零基礎Web開發\LearnTest0316\LearnTest0316\obj\Debug\LearnTest0316.csproj.AssemblyReference.cache

@@ -9,7 +9,8 @@ namespace LearnTest0316.BLL
     public class MVCAchPOC_DB_BLL
     {
         public static List<Users> getList() {
-            using (MvcAuthPOCEntities db =new MvcAuthPOCEntities()) {
+            using (MVCAchPOC_DB_DAL db = new MVCAchPOC_DB_DAL())
+            {
                 List<Users> Users = db.Users.ToList();
                 return Users;
             }

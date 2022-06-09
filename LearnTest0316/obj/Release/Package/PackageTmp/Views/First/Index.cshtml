@@ -1,13 +1,13 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
+    var UsersData = ViewBag.UserList;
 }
 <script src="~/Scripts/jquery-3.4.1.js"></script>
 <script>
     $(() => {
         $.ajax({
             async: false,
-            url: 'https://localhost:5487/First/GetUserData',// url位置
+            url: 'https://localhost:44352/First/GetUserData',// url位置
             type: 'get',// post/get
             dataType: 'json',
             data: {},// 輸入的資料
@@ -170,3 +170,90 @@
     <ul style="color: black;" id="info" class="ulTrans">
     </ul>
 </div>
+<hr />
+<h3 style="color: rgb(231, 131, 231);">接收數據為:</h3>
+<ul style="color:black;margin:2px">
+    @for (int i = 0; i < UsersData.Count; i++)
+    {
+        <li>
+            使用者名稱=@UsersData[i].UserName<br />
+            使用者權限=@UsersData[i].RoleId
+        </li>
+        <p></p>
+    }
+</ul>
+<div class="row">
+    <table id="example" class="display" style="width:100%;color:black">
+        <thead>
+            <tr>
+                <th>員工Id</th>
+                <th>名稱</th>
+                <th>密碼</th>
+                <th>權限等級</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < UsersData.Count; i++)
+            {
+                <tr>
+                    <td>@UsersData[i].UserId</td>
+                    <td>@UsersData[i].UserName</td>
+                    <td>@UsersData[i].Password</td>
+                    <td>@UsersData[i].RoleId</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>UserId</th>
+                <th>UserName</th>
+                <th>Password</th>
+                <th>RoleId</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example').DataTable({
+                language: {
+                    "emptyTable": "無資料...",
+                    "processing": "處理中...",
+                    "loadingRecords": "載入中...",
+                    "lengthMenu": "每頁 _MENU_ 筆資料",
+                    "zeroRecords": "無搜尋結果",
+                    "info": "_START_ 至 _END_ / 共 _TOTAL_ 筆",
+                    "infoEmpty": "尚無資料",
+                    "infoFiltered": "(從 _MAX_ 筆資料過濾)",
+                    "infoPostFix": "",
+                    "search": "搜尋字串:",
+                    "paginate": {
+                        "first": "首頁",
+                        "last": "末頁",
+                        "next": "下頁",
+                        "previous": "前頁"
+                    },
+                    "aria": {
+                        "sortAscending": ": 升冪",
+                        "sortDescending": ": 降冪"
+                    }
+                },
+                //[顯示比數],[項目選擇]
+                lengthMenu: [[3,2,1], [3,2,1]],
+                //asc升序、desc降序
+                order: [[0, "asc"]],
+                //項目排序功能
+                ordering: true,
+                //分頁功能
+                paging: true,
+                //搜尋欄位是否顯示
+                searching: true,
+                //指定高跟寬
+                //scrollX: "500px",
+                //scrollY: "400px",
+            });
+        });
+    </script>
+}
+
