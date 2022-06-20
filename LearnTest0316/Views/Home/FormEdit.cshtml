@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "FormEdit";
+}
+
+<h2>This is FormEdit</h2>
+<hr />
+<form action="/Home/FormEditGet" method="post">
+    <div class="form-group">
+        <label for="Stu_Num">學號</label><br />
+        <input type="text" id="Stu_Num" name="Stu_Num" pattern="[0-9]{6,8}" required placeholder="請輸入5-9個數字">
+    </div>
+    <div class="form-group">
+        <label for="Stu_Name">姓名</label><br />
+        <input type="text" id="Stu_Name" name="Stu_Name">
+    </div>
+    <div class="form-group">
+        <label for="Stu_Score">分數</label><br />
+        <input type="text" id="Stu_Score" name="Stu_Score">
+    </div>
+    <button type="submit" class="btn btn-primary">確定</button>
+</form>

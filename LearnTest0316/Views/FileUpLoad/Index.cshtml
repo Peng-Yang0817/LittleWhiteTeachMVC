@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>This's FileUpload Page</h2>
+
+<form action="/FileUpload/Upload" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="Stu_Score">選擇圖片上傳</label><br />
+        <small class="form-text text-muted">請上傳 image/png/jpeg</small><br />
+
+        <input type="file" id="Stu_Score" name="file" accept="image/png,image/jpeg">
+    </div>
+    <button type="submit" class="btn btn-primary">確定</button>
+</form>

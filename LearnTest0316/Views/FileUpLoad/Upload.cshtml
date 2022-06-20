@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Upload";
+    var message = ViewBag.Message;
+    var fileName = ViewBag.fileName;
+    var fileType = ViewBag.fileType;
+}
+
+<h2>Page Guide</h2>
+<h3>@message</h3>
+<div>
+    <a href="@Url.Action("GetFile","FileUpLoad",new { Name=fileName,Type =fileType })">content</a>
+</div>
+

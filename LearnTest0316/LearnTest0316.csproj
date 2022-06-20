@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BLL\MVCAchPOC_DB_BLL.cs" />
+    <Compile Include="Controllers\FileUpLoadController.cs" />
     <Compile Include="Controllers\FirstController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\C__MigrationHistory.cs" />
@@ -195,9 +196,15 @@
     <Content Include="Views\Home\OpssPage.cshtml" />
     <Content Include="Views\Home\ErrorCodingPag.cshtml" />
     <Content Include="Views\Home\ErrorCodingPagReD.cshtml" />
+    <Content Include="Views\Home\FormEdit.cshtml" />
+    <Content Include="Views\Home\FormEditGet.cshtml" />
+    <Content Include="Views\FileUpLoad\Index.cshtml" />
+    <Content Include="Views\FileUpLoad\Upload.cshtml" />
+    <Content Include="Views\FileUpLoad\GetFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\image\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
