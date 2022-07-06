@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ViewImageLearnModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customer_num" Type="nvarchar" MaxLength="50" />
+    <Property Name="customer_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="customer_code" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="orders">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="num" Type="nvarchar" MaxLength="50" />
+    <Property Name="oderDate" Type="date" />
+    <Property Name="customer_num" Type="nvarchar" MaxLength="50" />
+    <Property Name="amounts" Type="decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'ViewImageLearn.dbo.customer_order' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="customer_order">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="int" Nullable="false" />
+    <Property Name="cust_num[customer]" Type="nvarchar" MaxLength="50" />
+    <Property Name="customer_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="customer_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="oderDate" Type="date" />
+    <Property Name="cust_num[order]" Type="nvarchar" MaxLength="50" />
+    <Property Name="amounts" Type="decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6035: 關聯性 'FK_orders_customer' 在主要端上，有不屬於資料表索引鍵的資料行。已排除此關聯性。
+        <Association Name="FK_orders_customer" />-->
+  <EntityContainer Name="ViewImageLearnModelStoreContainer">
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer_order" EntityType="Self.customer_order" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [customer_order].[rowid] AS [rowid], 
+    [customer_order].[cust_num[customer]]] AS [cust_num[customer]]], 
+    [customer_order].[customer_name] AS [customer_name], 
+    [customer_order].[address] AS [address], 
+    [customer_order].[customer_code] AS [customer_code], 
+    [customer_order].[oderDate] AS [oderDate], 
+    [customer_order].[cust_num[order]]] AS [cust_num[order]]], 
+    [customer_order].[amounts] AS [amounts]
+    FROM [dbo].[customer_order] AS [customer_order]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

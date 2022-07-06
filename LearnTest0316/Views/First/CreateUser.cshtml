@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "CreateUser";
+}
+
+<h2>Create User</h2>
+
+<form action="/First/CreateUser" method="post">
+    <div class="form-group">
+        <label for="UserName">UserName</label><br />
+        <input type="text" id="UserName" name="UserName">
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label><br />
+        <input type="password" id="Password" name="Password">
+    </div>
+    <div class="form-group">
+        <label for="RoleId">RoleId</label><br />
+        <input type="text" id="RoleId" name="RoleId" pattern="[1-3]{1}" title="RangeId select only 1 to 3">
+    </div>
+    <button type="submit" class="btn btn-primary">submit</button>
+</form>

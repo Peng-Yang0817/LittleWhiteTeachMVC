@@ -133,12 +133,38 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\Customer_order_BLL.cs" />
     <Compile Include="BLL\MVCAchPOC_DB_BLL.cs" />
+    <Compile Include="Controllers\CustomerAndOrderController.cs" />
     <Compile Include="Controllers\FileUpLoadController.cs" />
     <Compile Include="Controllers\FirstController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\customer.cs">
+      <DependentUpon>Custormer_order.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\customer_order.cs">
+      <DependentUpon>Custormer_order.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Custormer_order.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Custormer_order.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Custormer_order.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Custormer_order.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Custormer_order.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Custormer_order.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\C__MigrationHistory.cs" />
     <Compile Include="DAL\MVCAchPOC_DB_DAL.cs" />
+    <Compile Include="DAL\orders.cs">
+      <DependentUpon>Custormer_order.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Roles.cs" />
     <Compile Include="DAL\Users.cs" />
     <Compile Include="Global.asax.cs">
@@ -153,6 +179,16 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.dataTables.min.css" />
+    <Content Include="DAL\Custormer_order.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Custormer_order.edmx</DependentUpon>
+      <LastGenOutput>Custormer_order.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\Custormer_order.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Custormer_order.edmx</DependentUpon>
+      <LastGenOutput>Custormer_order.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -161,6 +197,13 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="CfgFiles\log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="DAL\Custormer_order.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Custormer_order.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DAL\Custormer_order.edmx.diagram">
+      <DependentUpon>Custormer_order.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -201,6 +244,11 @@
     <Content Include="Views\FileUpLoad\Index.cshtml" />
     <Content Include="Views\FileUpLoad\Upload.cshtml" />
     <Content Include="Views\FileUpLoad\GetFile.cshtml" />
+    <Content Include="Views\First\ChangeUserId.cshtml" />
+    <Content Include="Views\First\CreateUser.cshtml" />
+    <Content Include="Views\First\DeleteUser.cshtml" />
+    <Content Include="Views\CustomerAndOrder\Index.cshtml" />
+    <Content Include="Views\First\GetListData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

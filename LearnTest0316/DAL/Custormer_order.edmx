@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ViewImageLearnModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="rowid" />
+          </Key>
+          <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_num" Type="nvarchar" MaxLength="50" />
+          <Property Name="customer_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="customer_code" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="rowid" />
+          </Key>
+          <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="num" Type="nvarchar" MaxLength="50" />
+          <Property Name="oderDate" Type="date" />
+          <Property Name="customer_num" Type="nvarchar" MaxLength="50" />
+          <Property Name="amounts" Type="decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'ViewImageLearn.dbo.customer_order' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="customer_order">
+          <Key>
+            <PropertyRef Name="rowid" />
+          </Key>
+          <Property Name="rowid" Type="int" Nullable="false" />
+          <Property Name="cust_num[customer]" Type="nvarchar" MaxLength="50" />
+          <Property Name="customer_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="customer_code" Type="nvarchar" MaxLength="50" />
+          <Property Name="oderDate" Type="date" />
+          <Property Name="cust_num[order]" Type="nvarchar" MaxLength="50" />
+          <Property Name="amounts" Type="decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6035: 關聯性 'FK_orders_customer' 在主要端上，有不屬於資料表索引鍵的資料行。已排除此關聯性。
+        <Association Name="FK_orders_customer" />-->
+        <EntityContainer Name="ViewImageLearnModelStoreContainer">
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer_order" EntityType="Self.customer_order" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [customer_order].[rowid] AS [rowid], 
+    [customer_order].[cust_num[customer]]] AS [cust_num[customer]]], 
+    [customer_order].[customer_name] AS [customer_name], 
+    [customer_order].[address] AS [address], 
+    [customer_order].[customer_code] AS [customer_code], 
+    [customer_order].[oderDate] AS [oderDate], 
+    [customer_order].[cust_num[order]]] AS [cust_num[order]]], 
+    [customer_order].[amounts] AS [amounts]
+    FROM [dbo].[customer_order] AS [customer_order]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ViewImageLearnModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="rowid" />
+          </Key>
+          <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="customer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="customer_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="rowid" />
+          </Key>
+          <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="oderDate" Type="DateTime" Precision="0" />
+          <Property Name="customer_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="amounts" Type="Decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="customer_order">
+          <Key>
+            <PropertyRef Name="rowid" />
+          </Key>
+          <Property Name="rowid" Type="Int32" Nullable="false" />
+          <Property Name="cust_num_customer_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="customer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="customer_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="oderDate" Type="DateTime" Precision="0" />
+          <Property Name="cust_num_order_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="amounts" Type="Decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityContainer Name="ViewImageLearnEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="customer" EntityType="Self.customer" />
+          <EntitySet Name="orders" EntityType="Self.orders" />
+          <EntitySet Name="customer_order" EntityType="Self.customer_order" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ViewImageLearnModelStoreContainer" CdmEntityContainer="ViewImageLearnEntities">
+          <EntitySetMapping Name="customer">
+            <EntityTypeMapping TypeName="ViewImageLearnModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="rowid" ColumnName="rowid" />
+                <ScalarProperty Name="customer_num" ColumnName="customer_num" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="customer_code" ColumnName="customer_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="ViewImageLearnModel.orders">
+              <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="rowid" ColumnName="rowid" />
+                <ScalarProperty Name="num" ColumnName="num" />
+                <ScalarProperty Name="oderDate" ColumnName="oderDate" />
+                <ScalarProperty Name="customer_num" ColumnName="customer_num" />
+                <ScalarProperty Name="amounts" ColumnName="amounts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customer_order">
+            <EntityTypeMapping TypeName="ViewImageLearnModel.customer_order">
+              <MappingFragment StoreEntitySet="customer_order">
+                <ScalarProperty Name="rowid" ColumnName="rowid" />
+                <ScalarProperty Name="cust_num_customer_" ColumnName="cust_num[customer]" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="customer_code" ColumnName="customer_code" />
+                <ScalarProperty Name="oderDate" ColumnName="oderDate" />
+                <ScalarProperty Name="cust_num_order_" ColumnName="cust_num[order]" />
+                <ScalarProperty Name="amounts" ColumnName="amounts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

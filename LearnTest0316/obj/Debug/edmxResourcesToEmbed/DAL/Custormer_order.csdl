@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ViewImageLearnModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customer_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="customer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="customer_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="orders">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="oderDate" Type="DateTime" Precision="0" />
+    <Property Name="customer_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amounts" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="customer_order">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="Int32" Nullable="false" />
+    <Property Name="cust_num_customer_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="customer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="customer_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="oderDate" Type="DateTime" Precision="0" />
+    <Property Name="cust_num_order_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amounts" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityContainer Name="ViewImageLearnEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="customer" EntityType="Self.customer" />
+    <EntitySet Name="orders" EntityType="Self.orders" />
+    <EntitySet Name="customer_order" EntityType="Self.customer_order" />
+  </EntityContainer>
+</Schema>

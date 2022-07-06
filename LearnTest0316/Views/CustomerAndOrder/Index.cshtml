@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    var CustomerData = ViewBag.CustomerData;
+}
+
+<h2>Index</h2>
+
+<div class="row">
+    <table id="example" class="display" style="width: 100%;  border: solid 1px #8CB4FF">
+        <thead>
+            <tr>
+                <th>訂單編號</th>
+                <th>客戶編號</th>
+                <th>客戶名稱</th>
+                <th>訂購時間</th>
+                <th>金額</th>
+            </tr>
+        </thead>
+        <tbody style="color:black">
+            @for (int i = 0; i < CustomerData.Count; i++)
+            {
+                <tr>
+                    <td>@CustomerData[i].rowid</td>
+                    <td>@CustomerData[i].cust_num_customer_</td>
+                    <td>@CustomerData[i].customer_name</td>
+                    <td>@CustomerData[i].oderDate</td>
+                    <td>@CustomerData[i].amounts</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>RowId</th>
+                <th>Customer Num</th>
+                <th>Customer Name</th>
+                <th>order Time</th>
+                <th>amounts</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example').DataTable({
+                language: {
+                    "emptyTable": "無資料...",
+                    "processing": "處理中...",
+                    "loadingRecords": "載入中...",
+                    "lengthMenu": "每頁 _MENU_ 筆資料",
+                    "zeroRecords": "無搜尋結果",
+                    "info": "_START_ 至 _END_ / 共 _TOTAL_ 筆",
+                    "infoEmpty": "尚無資料",
+                    "infoFiltered": "(從 _MAX_ 筆資料過濾)",
+                    "infoPostFix": "",
+                    "search": "搜尋字串:",
+                    "paginate": {
+                        "first": "首頁",
+                        "last": "末頁",
+                        "next": "下頁",
+                        "previous": "前頁"
+                    },
+                    "aria": {
+                        "sortAscending": ": 升冪",
+                        "sortDescending": ": 降冪"
+                    }
+                },
+                //[顯示比數],[項目選擇]
+                lengthMenu: [[3, 5, 7], [3, 5, 7]],
+                //asc升序、desc降序
+                order: [[0, "asc"]],
+                //項目排序功能
+                ordering: true,
+                //分頁功能
+                paging: true,
+                //搜尋欄位是否顯示
+                searching: true,
+                //指定高跟寬
+                //scrollX: "500px",
+                //scrollY: "400px",
+            });
+        });
+    </script>
+}

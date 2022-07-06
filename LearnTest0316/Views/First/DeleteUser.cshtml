@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "DeleteUser";
+}
+
+<h2>Delete User</h2>
+
+<form action="/First/DeleteUser" method="post" id="form1">
+    <div class="form-group">
+        <label for="UserName">UserName</label><br />
+        <input type="text" id="UserName" name="UserName">
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label><br />
+        <input type="password" id="Password" name="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">submit</button>
+</form>
+
+<script>
+    document.getElementById("form1").addEventListener("submit", function (e) {
+        if (confirm("Are you sure?")) {
+            console.log("Deleting");
+            document.forms[0].submit()
+        }
+        else {
+            console.log("Cancelled");
+            e.preventDefault(); // cancelling submission
+        }
+    })
+</script>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ViewImageLearnModelStoreContainer" CdmEntityContainer="ViewImageLearnEntities">
+    <EntitySetMapping Name="customer">
+      <EntityTypeMapping TypeName="ViewImageLearnModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+          <ScalarProperty Name="customer_num" ColumnName="customer_num" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="customer_code" ColumnName="customer_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="ViewImageLearnModel.orders">
+        <MappingFragment StoreEntitySet="orders">
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+          <ScalarProperty Name="num" ColumnName="num" />
+          <ScalarProperty Name="oderDate" ColumnName="oderDate" />
+          <ScalarProperty Name="customer_num" ColumnName="customer_num" />
+          <ScalarProperty Name="amounts" ColumnName="amounts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer_order">
+      <EntityTypeMapping TypeName="ViewImageLearnModel.customer_order">
+        <MappingFragment StoreEntitySet="customer_order">
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+          <ScalarProperty Name="cust_num_customer_" ColumnName="cust_num[customer]" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="customer_code" ColumnName="customer_code" />
+          <ScalarProperty Name="oderDate" ColumnName="oderDate" />
+          <ScalarProperty Name="cust_num_order_" ColumnName="cust_num[order]" />
+          <ScalarProperty Name="amounts" ColumnName="amounts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

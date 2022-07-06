@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "ChangeUserId";
+}
+
+<h2>Change Password for correspond UserName</h2>
+
+<form action="/First/ChangeUserId" method="post">
+    <div class="form-group">
+        <label for="UserName">UserName</label><br />
+        <input type="text" id="UserName" name="UserName" required placeholder="Enter UserName">
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label><br />
+        <input type="text" id="Password" name="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

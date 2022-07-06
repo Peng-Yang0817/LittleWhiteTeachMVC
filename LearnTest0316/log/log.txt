@@ -1,2 +1,3 @@
-﻿INFO 6 LearnTest0316.Utility.Logger - 系統初始化Logger模塊
-INFO 7 LearnTest0316.Utility.Logger - 系統初始化Logger模塊
+﻿INFO 5 LearnTest0316.Utility.Logger - 系統初始化Logger模塊
+INFO 6 LearnTest0316.Utility.Logger - 系統初始化Logger模塊
+INFO 6 LearnTest0316.Utility.Logger - 系統初始化Logger模塊
